@@ -1,9 +1,9 @@
 # Prova de iOS
 ## Objetivo
 
-Você deve desenvolver uma aplicação iOS Nativa em Swift que consuma a API
-do Github Issues ( https://developer.github.com/v3/issues/ ), usando como base o repositório
-do Swift ( https://github.com/apple/swift ).
+Você deve desenvolver uma aplicação iOS em Swift que consuma a API do Github 
+Issues ( https://developer.github.com/v3/issues/ ), usando como base o 
+repositório do Swift ( https://github.com/apple/swift ).
 
 ## O aplicativo deve conter
 
@@ -23,13 +23,10 @@ conter os seguintes elementos:
 ## Requisitos
 
 * Ser escrito em Swift
-* Testes Unitários (preferencialmente com Quick, Nimble, Cuckoo e OHHTTPStubs)
 * Clean Architecture (MVP ou MVVM)
-* Chamadas de REST com Alamofire/Moya
-
-## Importante conhecer
-
-* Firebase
+* View Code
+* Testes Unitários (preferencialmente com Quick, Nimble, Cuckoo e OHHTTPStubs)
+* Preferencialmente uso de Alamofire/Moya
 
 ## Pontos de avaliação
 
