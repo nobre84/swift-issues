@@ -4,6 +4,7 @@ target 'SwiftIssues' do
   use_frameworks!
 
   pod 'Moya'
+  pod 'URLImage'
 
   target 'SwiftIssuesTests' do
     inherit! :search_paths

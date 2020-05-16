@@ -19,16 +19,38 @@ class IssueListRowViewModel: ObservableObject, Identifiable {
         return issue.title
     }
     
-    var stateImage: Image {
+    var icon: Image {
         switch issue.state {
         case .closed:
             return Image("issue_closed")
         case .open:
-        return Image("issue_open")
+            return Image("issue_open")
         }
     }
     
-    var author: String {
-        return issue.createdBy.name
+    var iconColor: Color {
+        switch issue.state {
+        case .closed:
+            return .red
+        case .open:
+            return .green
+        }
+    }
+    
+    var subtitle: String {
+        return "#\(issue.number) opened \(relativeDate) by \(issue.author.name)"
+    }
+    
+    var detailViewModel: IssueDetailViewModel {
+        return IssueDetailViewModel(issue: issue)
+    }
+    
+    private var relativeDate: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+
+        // get exampleDate relative to the current date
+        let relativeDate = formatter.localizedString(for: issue.createdAt, relativeTo: Date())
+        return relativeDate
     }
 }

@@ -39,7 +39,13 @@ enum GitHubService {
         }
     }
     
-    case issues(owner: Owner, repo: Repo)
+    enum State: String {
+        case open
+        case closed
+        case all
+    }
+    
+    case issues(owner: Owner, repo: Repo, state: State? = nil)
 }
 
 // MARK: - Adopts TargetType for Moya integration
@@ -51,7 +57,7 @@ extension GitHubService: TargetType {
     
     var path: String {
         switch self {
-        case .issues(let owner, let repo):
+        case .issues(let owner, let repo, _):
             return "/repos/\(owner.name)/\(repo.name)/issues"
         }
     }
@@ -65,8 +71,11 @@ extension GitHubService: TargetType {
     
     var task: Task {
         switch self {
-        case .issues:
-            return .requestPlain
+        case .issues(_, _, let state):
+            var params: [String: Any] = [:]
+            params["state"] = state?.rawValue
+            return .requestParameters(parameters: params,
+                                      encoding: URLEncoding.default)
         }
     }
     

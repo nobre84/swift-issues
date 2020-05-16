@@ -6,8 +6,8 @@
 //  Copyright © 2020 Rafael Nobre. All rights reserved.
 //
 
+import Foundation
 import Combine
-import SwiftUI
 import Moya
 
 class IssueListViewModel: ObservableObject, Identifiable {
@@ -16,6 +16,13 @@ class IssueListViewModel: ObservableObject, Identifiable {
         case loading
         case error(String)
         case ready([IssueListRowViewModel])
+        
+        var isLoading: Bool {
+            if case .loading = self {
+                return true
+            }
+            return false
+        }
     }
     
     @Published var state: State = .loading
@@ -32,8 +39,9 @@ class IssueListViewModel: ObservableObject, Identifiable {
     func fetchIssues() {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        provider.requestPublisher(.issues(owner: .apple, repo: .swift))
+        provider.requestPublisher(.issues(owner: .apple, repo: .swift, state: .all))
             .filterSuccessfulStatusAndRedirectCodes()
+                        .print()
             .retry(2)
             .map(\.data)
             .decode(type: [Issue].self, decoder: decoder)

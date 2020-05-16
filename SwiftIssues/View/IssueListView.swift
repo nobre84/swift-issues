@@ -16,14 +16,15 @@ struct IssueListView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                Section {
-                    listContent
+        LoadingView(isShowing: .constant(viewModel.state.isLoading)) {
+            NavigationView {
+                List {
+                    Section {
+                        self.listContent
+                    }
                 }
+                .navigationBarTitle("app-title")
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Swift Issues")
         }
     }
     
@@ -34,12 +35,48 @@ private extension IssueListView {
     var listContent: some View {
         switch viewModel.state {
         case .loading:
-            return AnyView(Text("Loading issues...")).id("Loading")
+            return AnyView(EmptyView()).id("Loading")
         case .error(let message):
-            return AnyView(Text(message)).id("Error")
+            return AnyView(
+                Text(message)
+                    .foregroundColor(.gray)
+            ).id("Error")
         case .ready(let rows):
+            if rows.isEmpty {
+                return AnyView(
+                    Text("no-issues")
+                        .foregroundColor(.gray)
+                ).id("Empty")
+            }
             return AnyView(ForEach(rows, content: IssueListRowView.init(viewModel:))).id("List")
         }
     }
 
 }
+
+#if DEBUG
+struct IssueListView_Previews: PreviewProvider {
+    static var previews: some View {
+        let errorViewModel = IssueListViewModel()
+        errorViewModel.state = .error("Error loading issues")
+        
+        let emptyViewModel = IssueListViewModel()
+        emptyViewModel.state = .ready([])
+        
+        let regularViewModel = IssueListViewModel()
+        regularViewModel.state = .ready([
+            IssueListRowViewModel(issue: .dummyOpen),
+            IssueListRowViewModel(issue: .dummyClosed)
+        ])
+        
+        return Group {
+            IssueListView(viewModel: regularViewModel)
+                .previewDisplayName("regular state")
+            IssueListView(viewModel: errorViewModel)
+                .previewDisplayName("error state")
+            IssueListView(viewModel: emptyViewModel)
+                .previewDisplayName("empty state")
+        }
+    }
+}
+#endif

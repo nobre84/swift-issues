@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,11 @@
 		0016CDA5246F62C000AEF35E /* IssueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CDA4246F62C000AEF35E /* IssueListView.swift */; };
 		0016CDA7246F871E00AEF35E /* IssueListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CDA6246F871E00AEF35E /* IssueListRowViewModel.swift */; };
 		0016CDA9246F8A7700AEF35E /* IssueListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CDA8246F8A7700AEF35E /* IssueListRowView.swift */; };
+		0016CDAC246FE29500AEF35E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0016CDAE246FE29500AEF35E /* Localizable.strings */; };
+		0016CDB1246FE47E00AEF35E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CDB0246FE47E00AEF35E /* LoadingView.swift */; };
+		0016CDB3247006B600AEF35E /* IssueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CDB2247006B600AEF35E /* IssueDetailView.swift */; };
+		0016CDB62470167100AEF35E /* URLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CDB52470167100AEF35E /* URLOpener.swift */; };
+		0016CDB92470395900AEF35E /* MDText in Frameworks */ = {isa = PBXBuildFile; productRef = 0016CDB82470395900AEF35E /* MDText */; };
 		797B461AD76CF2848CF6FA9E /* Pods_SwiftIssuesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51912D97598ED79724FBB56B /* Pods_SwiftIssuesTests.framework */; };
 		C1848C1B8F66B3DFBB41BA25 /* Pods_SwiftIssues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED94DC7C9E98570230A5E752 /* Pods_SwiftIssues.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +67,11 @@
 		0016CDA4246F62C000AEF35E /* IssueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListView.swift; sourceTree = "<group>"; };
 		0016CDA6246F871E00AEF35E /* IssueListRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListRowViewModel.swift; sourceTree = "<group>"; };
 		0016CDA8246F8A7700AEF35E /* IssueListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListRowView.swift; sourceTree = "<group>"; };
+		0016CDAD246FE29500AEF35E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0016CDAF246FE2B600AEF35E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0016CDB0246FE47E00AEF35E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0016CDB2247006B600AEF35E /* IssueDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailView.swift; sourceTree = "<group>"; };
+		0016CDB52470167100AEF35E /* URLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpener.swift; sourceTree = "<group>"; };
 		51912D97598ED79724FBB56B /* Pods_SwiftIssuesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftIssuesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C372C2D52B8CB6539C85321 /* Pods-SwiftIssues.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftIssues.release.xcconfig"; path = "Target Support Files/Pods-SwiftIssues/Pods-SwiftIssues.release.xcconfig"; sourceTree = "<group>"; };
 		7635046FC93CEF7AE15B9A13 /* Pods-SwiftIssues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftIssues.debug.xcconfig"; path = "Target Support Files/Pods-SwiftIssues/Pods-SwiftIssues.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0016CDB92470395900AEF35E /* MDText in Frameworks */,
 				C1848C1B8F66B3DFBB41BA25 /* Pods_SwiftIssues.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +128,7 @@
 				0016CCEC246F195000AEF35E /* Model */,
 				0016CCE9246F193F00AEF35E /* View */,
 				0016CCEB246F194B00AEF35E /* ViewModel */,
+				0016CDB42470165700AEF35E /* Utils */,
 				0016CCE4246F18DB00AEF35E /* Extensions */,
 				0016CCE7246F191100AEF35E /* Resources */,
 				0016CCE8246F191E00AEF35E /* Supporting files */,
@@ -166,6 +178,7 @@
 			children = (
 				0016CCC5246F0AE600AEF35E /* Assets.xcassets */,
 				0016CCEE246F19DA00AEF35E /* LaunchScreen.storyboard */,
+				0016CDAE246FE29500AEF35E /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -185,6 +198,8 @@
 			children = (
 				0016CDA4246F62C000AEF35E /* IssueListView.swift */,
 				0016CDA8246F8A7700AEF35E /* IssueListRowView.swift */,
+				0016CDB2247006B600AEF35E /* IssueDetailView.swift */,
+				0016CDB0246FE47E00AEF35E /* LoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +221,14 @@
 				0016CD90246F223E00AEF35E /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0016CDB42470165700AEF35E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0016CDB52470167100AEF35E /* URLOpener.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		09B14D58FB36560D526DAE07 /* Frameworks */ = {
@@ -246,6 +269,9 @@
 			dependencies = (
 			);
 			name = SwiftIssues;
+			packageProductDependencies = (
+				0016CDB82470395900AEF35E /* MDText */,
+			);
 			productName = SwiftIssues;
 			productReference = 0016CCBC246F0AE400AEF35E /* SwiftIssues.app */;
 			productType = "com.apple.product-type.application";
@@ -296,8 +322,12 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 0016CCB3246F0AE400AEF35E;
+			packageReferences = (
+				0016CDB72470395900AEF35E /* XCRemoteSwiftPackageReference "MDText" */,
+			);
 			productRefGroup = 0016CCBD246F0AE400AEF35E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -314,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0016CCEF246F19DA00AEF35E /* LaunchScreen.storyboard in Resources */,
+				0016CDAC246FE29500AEF35E /* Localizable.strings in Resources */,
 				0016CCC9246F0AE600AEF35E /* Preview Assets.xcassets in Resources */,
 				0016CCC6246F0AE600AEF35E /* Assets.xcassets in Resources */,
 			);
@@ -415,12 +446,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0016CDA9246F8A7700AEF35E /* IssueListRowView.swift in Sources */,
+				0016CDB1246FE47E00AEF35E /* LoadingView.swift in Sources */,
 				0016CCE6246F18EE00AEF35E /* String+Extensions.swift in Sources */,
 				0016CCC0246F0AE400AEF35E /* AppDelegate.swift in Sources */,
 				0016CD9F246F5C4800AEF35E /* AnyPublisher+Response.swift in Sources */,
 				0016CCC2246F0AE400AEF35E /* SceneDelegate.swift in Sources */,
 				0016CDA1246F5C4800AEF35E /* MoyaPublisher.swift in Sources */,
+				0016CDB3247006B600AEF35E /* IssueDetailView.swift in Sources */,
 				0016CD93246F22F400AEF35E /* IssueListViewModel.swift in Sources */,
+				0016CDB62470167100AEF35E /* URLOpener.swift in Sources */,
 				0016CD95246F230000AEF35E /* IssueDetailViewModel.swift in Sources */,
 				0016CCF1246F1A6700AEF35E /* Issue.swift in Sources */,
 				0016CDA5246F62C000AEF35E /* IssueListView.swift in Sources */,
@@ -449,11 +483,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0016CDAE246FE29500AEF35E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0016CDAD246FE29500AEF35E /* en */,
+				0016CDAF246FE2B600AEF35E /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		0016CCD9246F0AE600AEF35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -514,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -681,6 +729,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0016CDB72470395900AEF35E /* XCRemoteSwiftPackageReference "MDText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lambdo-Labs/MDText";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0016CDB82470395900AEF35E /* MDText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0016CDB72470395900AEF35E /* XCRemoteSwiftPackageReference "MDText" */;
+			productName = MDText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0016CCB4246F0AE400AEF35E /* Project object */;
 }

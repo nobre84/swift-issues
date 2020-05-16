@@ -21,12 +21,14 @@ PODS:
   - OHHTTPStubs/NSURLSession (9.0.0):
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (9.0.0)
+  - URLImage (0.9.15)
 
 DEPENDENCIES:
   - Cuckoo
   - Moya
   - Nimble
   - OHHTTPStubs
+  - URLImage
 
 SPEC REPOS:
   trunk:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - Moya
     - Nimble
     - OHHTTPStubs
+    - URLImage
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
@@ -42,7 +45,8 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Nimble: 2da33c44adfde49552d4a6b3ef16039a45bf8dca
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
+  URLImage: 1adef9b81f071fc2fc13a1a87ff882c0a694d48b
 
-PODFILE CHECKSUM: a798988c7bf8f3806c3936a95a9ed48bed4df549
+PODFILE CHECKSUM: 3f4083290ef8c0943b448f7a0d3e60502d42d382
 
 COCOAPODS: 1.9.1
