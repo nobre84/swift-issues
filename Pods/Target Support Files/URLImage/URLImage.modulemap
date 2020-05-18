@@ -1,4 +1,4 @@
-framework module URLImage {
+module URLImage {
   umbrella header "URLImage-umbrella.h"
 
   export *

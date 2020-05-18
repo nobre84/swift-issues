@@ -46,13 +46,17 @@ enum GitHubService {
     }
     
     case issues(owner: Owner, repo: Repo, state: State? = nil)
+    
+    static var host: String {
+        return "api.github.com"
+    }
 }
 
 // MARK: - Adopts TargetType for Moya integration
 extension GitHubService: TargetType {
     
     var baseURL: URL {
-        return URL(string: "https://api.github.com")!
+        return URL(string: "https://\(GitHubService.host)")!
     }
     
     var path: String {

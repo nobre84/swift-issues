@@ -25,6 +25,8 @@ struct IssueListView: View {
                 }
                 .navigationBarTitle("app-title")
             }
+        }.onAppear {
+            self.viewModel.fetchIssues()
         }
     }
     
@@ -36,9 +38,9 @@ private extension IssueListView {
         switch viewModel.state {
         case .loading:
             return AnyView(EmptyView()).id("Loading")
-        case .error(let message):
+        case .error(let error):
             return AnyView(
-                Text(message)
+                Text(error.localizedDescription)
                     .foregroundColor(.gray)
             ).id("Error")
         case .ready(let rows):

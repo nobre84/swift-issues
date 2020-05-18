@@ -21,6 +21,9 @@ PODS:
   - OHHTTPStubs/NSURLSession (9.0.0):
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (9.0.0)
+  - OHHTTPStubs/Swift (9.0.0):
+    - OHHTTPStubs/Default
+  - Quick (2.2.0)
   - URLImage (0.9.15)
 
 DEPENDENCIES:
@@ -28,6 +31,8 @@ DEPENDENCIES:
   - Moya
   - Nimble
   - OHHTTPStubs
+  - OHHTTPStubs/Swift
+  - Quick
   - URLImage
 
 SPEC REPOS:
@@ -37,6 +42,7 @@ SPEC REPOS:
     - Moya
     - Nimble
     - OHHTTPStubs
+    - Quick
     - URLImage
 
 SPEC CHECKSUMS:
@@ -45,8 +51,9 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Nimble: 2da33c44adfde49552d4a6b3ef16039a45bf8dca
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   URLImage: 1adef9b81f071fc2fc13a1a87ff882c0a694d48b
 
-PODFILE CHECKSUM: 3f4083290ef8c0943b448f7a0d3e60502d42d382
+PODFILE CHECKSUM: 2fc3bb20dcc52a27ae0fb4832879d09f9406f9a7
 
 COCOAPODS: 1.9.1

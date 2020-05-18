@@ -1,15 +1,14 @@
 //
-//  SwiftIssuesTests.swift
+//  UserTests.swift
 //  SwiftIssuesTests
 //
-//  Created by Rafael Nobre on 15/05/20.
+//  Created by Rafael Nobre on 16/05/20.
 //  Copyright © 2020 Rafael Nobre. All rights reserved.
 //
 
 import XCTest
-@testable import SwiftIssues
 
-class SwiftIssuesTests: XCTestCase {
+class UserTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

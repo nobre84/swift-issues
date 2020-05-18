@@ -12,13 +12,34 @@ import Moya
 
 class IssueListViewModel: ObservableObject, Identifiable {
 
-    enum State {
+    enum State: Equatable {
+        
+        static func == (lhs: IssueListViewModel.State, rhs: IssueListViewModel.State) -> Bool {
+            switch (lhs, rhs) {
+            case (.loading, .loading):
+                return true
+            case (.error(let lhsError), .error(let rhsError)):
+                return lhsError as NSError == rhsError as NSError
+            case (.ready(let lhsRows), .ready(let rhsRows)):
+                return lhsRows == rhsRows
+            default:
+                return false
+            }
+        }
+        
         case loading
-        case error(String)
+        case error(Error)
         case ready([IssueListRowViewModel])
         
         var isLoading: Bool {
             if case .loading = self {
+                return true
+            }
+            return false
+        }
+        
+        var isError: Bool {
+            if case .error = self {
                 return true
             }
             return false
@@ -32,8 +53,6 @@ class IssueListViewModel: ObservableObject, Identifiable {
     
     init(provider: MoyaProvider<GitHubService> = MoyaProvider<GitHubService>()) {
         self.provider = provider
-        
-        fetchIssues()
     }
     
     func fetchIssues() {
@@ -41,14 +60,13 @@ class IssueListViewModel: ObservableObject, Identifiable {
         decoder.dateDecodingStrategy = .iso8601
         provider.requestPublisher(.issues(owner: .apple, repo: .swift, state: .all))
             .filterSuccessfulStatusAndRedirectCodes()
-                        .print()
-            .retry(2)
+            .print()
             .map(\.data)
             .decode(type: [Issue].self, decoder: decoder)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 if case let .failure(error) = completion {
-                    self?.state = .error(error.localizedDescription)
+                    self?.state = .error(error)
                 }
             }, receiveValue: { [weak self] issues in
                 self?.state = .ready(issues.map(IssueListRowViewModel.init))

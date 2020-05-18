@@ -1,4 +1,4 @@
-framework module Cuckoo {
+module Cuckoo {
   umbrella header "Cuckoo-umbrella.h"
 
   export *

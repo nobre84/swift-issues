@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Issue: Decodable {
-    enum State: String, Decodable {
+struct Issue: Decodable, Equatable {
+    enum State: String, Decodable, Equatable {
         case open
         case closed
     }

@@ -9,3 +9,4 @@
 "app-title" = "Swift issues";
 "no-issues" = "Nenhuma issue";
 "view-in-github" = "Ver no GitHub";
+"issue-row-subtitle" = "#%d aberta %@ por %@";

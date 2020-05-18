@@ -38,7 +38,10 @@ class IssueListRowViewModel: ObservableObject, Identifiable {
     }
     
     var subtitle: String {
-        return "#\(issue.number) opened \(relativeDate) by \(issue.author.name)"
+        return String(format: NSLocalizedString("issue-row-subtitle", comment: ""),
+                      issue.number,
+                      relativeDate,
+                      issue.author.name)
     }
     
     var detailViewModel: IssueDetailViewModel {
@@ -53,4 +56,12 @@ class IssueListRowViewModel: ObservableObject, Identifiable {
         let relativeDate = formatter.localizedString(for: issue.createdAt, relativeTo: Date())
         return relativeDate
     }
+}
+
+extension IssueListRowViewModel: Equatable {
+    
+    static func == (lhs: IssueListRowViewModel, rhs: IssueListRowViewModel) -> Bool {
+        return lhs.issue == rhs.issue
+    }
+        
 }

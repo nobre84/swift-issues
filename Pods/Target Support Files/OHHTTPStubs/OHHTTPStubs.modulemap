@@ -1,4 +1,4 @@
-framework module OHHTTPStubs {
+module OHHTTPStubs {
   umbrella header "OHHTTPStubs-umbrella.h"
 
   export *
