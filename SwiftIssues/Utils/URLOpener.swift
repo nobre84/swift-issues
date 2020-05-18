@@ -18,9 +18,3 @@ final class URLOpenerImpl: URLOpener {
         UIApplication.shared.open(url)
     }
 }
-
-extension UIApplication: URLOpener {
-    func open(_ url: URL) {
-        open(url, options: [:], completionHandler: nil)
-    }
-}
