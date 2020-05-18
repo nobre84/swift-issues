@@ -20,9 +20,6 @@ class IssueTests: XCTestCase {
     }
 
     func testExample() throws {
-        Locale.forceLocale(identifier: "en_US")
-        expect(Locale.current.identifier) == "en_US"
-        expect(NSLocalizedString("no-issues", comment: "")) == "Nenhuma issue"
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

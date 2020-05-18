@@ -25,6 +25,7 @@ class IssueListRowViewModelSpec: QuickSpec {
             
             afterEach {
                 Locale.resetLocale()
+                Bundle.resetLanguage()
             }
             
             it("has a title") {
@@ -51,17 +52,17 @@ class IssueListRowViewModelSpec: QuickSpec {
                 
             }
             
-            context("when localized in portuguese") {
+            context("when localized in brazilian portuguese") {
             
                 beforeEach {
                     Locale.forceLocale(identifier: "pt_BR")
+                    Bundle.forceLanguage("pt-BR")
                 }
                 
                 it("has a localized subtitle") {
-                    Locale.forceLocale(identifier: "pt_BR")
                     expect(viewModel.subtitle) == "#1234 aberta há 1 hora por John Doe"
                 }
-            }
+            }                        
         }
     }
     

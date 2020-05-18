@@ -50,6 +50,7 @@ class IssueListRowViewModel: ObservableObject, Identifiable {
     
     private var relativeDate: String {
         let formatter = RelativeDateTimeFormatter()
+        formatter.locale = .current
         formatter.unitsStyle = .full
 
         // get exampleDate relative to the current date

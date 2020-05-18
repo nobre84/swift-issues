@@ -39,6 +39,7 @@
 		0016CE7224729A0C00AEF35E /* SwizzlingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CE6F24729A0C00AEF35E /* SwizzlingHelper.swift */; };
 		0016CE7324729A0C00AEF35E /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CE7024729A0C00AEF35E /* Locale+Extensions.swift */; };
 		0016CE7424729A0C00AEF35E /* TimeZone+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CE7124729A0C00AEF35E /* TimeZone+Extensions.swift */; };
+		0016CE7F2472A5BF00AEF35E /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016CE7E2472A5BF00AEF35E /* Bundle+Extensions.swift */; };
 		23100CE0B7682B129E943C10 /* Pods_SwiftIssues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92960E1CB2DE6AB69E56A404 /* Pods_SwiftIssues.framework */; };
 		B6E8B025FF6B5C3581FDB45E /* Pods_SwiftIssuesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD63AF49988946178ADAA2D /* Pods_SwiftIssuesTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		0016CE6F24729A0C00AEF35E /* SwizzlingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwizzlingHelper.swift; sourceTree = "<group>"; };
 		0016CE7024729A0C00AEF35E /* Locale+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
 		0016CE7124729A0C00AEF35E /* TimeZone+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeZone+Extensions.swift"; sourceTree = "<group>"; };
+		0016CE7E2472A5BF00AEF35E /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		6C372C2D52B8CB6539C85321 /* Pods-SwiftIssues.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftIssues.release.xcconfig"; path = "Target Support Files/Pods-SwiftIssues/Pods-SwiftIssues.release.xcconfig"; sourceTree = "<group>"; };
 		7635046FC93CEF7AE15B9A13 /* Pods-SwiftIssues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftIssues.debug.xcconfig"; path = "Target Support Files/Pods-SwiftIssues/Pods-SwiftIssues.debug.xcconfig"; sourceTree = "<group>"; };
 		92960E1CB2DE6AB69E56A404 /* Pods_SwiftIssues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftIssues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +295,7 @@
 			children = (
 				0016CE7024729A0C00AEF35E /* Locale+Extensions.swift */,
 				0016CE7124729A0C00AEF35E /* TimeZone+Extensions.swift */,
+				0016CE7E2472A5BF00AEF35E /* Bundle+Extensions.swift */,
 				0016CE6F24729A0C00AEF35E /* SwizzlingHelper.swift */,
 			);
 			path = Extensions;
@@ -538,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0016CE6D247298C100AEF35E /* IssueListRowViewModelSpec.swift in Sources */,
+				0016CE7F2472A5BF00AEF35E /* Bundle+Extensions.swift in Sources */,
 				0016CDC22470438300AEF35E /* UserTests.swift in Sources */,
 				0016CDBE2470434F00AEF35E /* GitHubServiceTests.swift in Sources */,
 				0016CDC5247043A100AEF35E /* URLOpenerTests.swift in Sources */,
