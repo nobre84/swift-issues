@@ -32,8 +32,8 @@ class IssueListViewModelSpec: QuickSpec {
             beforeEach {
                 stub(condition: isHost(GitHubService.host)) { _ in
                     return HTTPStubsResponse(data: "[]".utf8Encoded,
-                                             statusCode:200,
-                                             headers:nil)
+                                             statusCode: 200,
+                                             headers: nil)
                 }
                 // Apparently this should work instead of the empty stub above, but Moya is still reaching the network and not supplying the target's sampleData ¯\_(ツ)_/¯
                 // viewModel = IssueListViewModel(provider: MoyaProvider<GitHubService>(stubClosure: MoyaProvider.immediatelyStub))

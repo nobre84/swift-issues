@@ -35,6 +35,7 @@ struct Issue: Decodable, Equatable {
 
 #if DEBUG
 extension Issue {
+    
     static var dummyOpen: Self {
         let dummyDescription = """
         Adding a fast path that enables us to simplify the successive loop.\r\n\r\nJudging by the abundance of `BoundGenericType::getGenericArgs` usage, we are going to have to call `GenericSignatureImpl::getInnermostGenericParams` much more often once we start storing substitution maps in bound generic type nodes, so this is ensuring the latter is as fast as possible without caching.\r\n
@@ -56,6 +57,16 @@ extension Issue {
                      createdAt: Date().advanced(by: -5000),
                      state: .closed,
                      htmlURL: URL(string: "http://google.com")!)
+    }
+    
+    func adjustingDate(to date: Date) -> Issue {
+        return Issue(title: title,
+                     description: description,
+                     number: number,
+                     author: author,
+                     createdAt: date,
+                     state: state,
+                     htmlURL: htmlURL)
     }
 }
 #endif

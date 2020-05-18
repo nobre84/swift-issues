@@ -46,20 +46,20 @@ class IssueListRowViewModelSpec: QuickSpec {
                     Locale.forceLocale(identifier: "en_US")
                 }
                 
-                it("has a localized subtitle") {
+                it("has english subtitle") {
                     expect(viewModel.subtitle) == "#1234 opened 1 hour ago by John Doe"
                 }
                 
             }
             
-            context("when localized in brazilian portuguese") {
+            context("when localized in portuguese") {
             
                 beforeEach {
                     Locale.forceLocale(identifier: "pt_BR")
                     Bundle.forceLanguage("pt-BR")
                 }
                 
-                it("has a localized subtitle") {
+                it("has portuguese subtitle") {
                     expect(viewModel.subtitle) == "#1234 aberta há 1 hora por John Doe"
                 }
             }                        

@@ -39,6 +39,7 @@ class IssueDetailViewModel: ObservableObject, Identifiable {
     
     var date: String {
         let formatter = DateFormatter()
+        formatter.timeZone = .current
         formatter.timeStyle = .short
         formatter.dateStyle = .short
         return formatter.string(from: issue.createdAt)
