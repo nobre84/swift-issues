@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: SwiftIssues/Utils/URLOpener.swift at 2020-05-18 15:19:35 +0000
+// MARK: - Mocks generated from file: SwiftIssues/Utils/URLOpener.swift at 2020-05-18 15:41:30 +0000
 
 //
 //  URLOpener.swift
