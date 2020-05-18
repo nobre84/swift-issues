@@ -7,18 +7,22 @@
 //
 
 import XCTest
+import Nimble
 
 class IssueTests: XCTestCase {
-
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        Locale.forceLocale(identifier: "pt_BR")
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        Locale.resetLocale()
     }
 
     func testExample() throws {
+        Locale.forceLocale(identifier: "en_US")
+        expect(Locale.current.identifier) == "en_US"
+        expect(NSLocalizedString("no-issues", comment: "")) == "Nenhuma issue"
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

@@ -19,7 +19,7 @@ struct IssueListRowView: View {
         NavigationLink(destination: IssueDetailView(viewModel: viewModel.detailViewModel)) {
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
-                    viewModel.icon
+                    Image(viewModel.icon)
                         .foregroundColor(viewModel.iconColor)
                         .padding(.top, 4)
                     Text(viewModel.title)

@@ -1,4 +1,4 @@
-module Pods_SwiftIssues {
+framework module Pods_SwiftIssues {
   umbrella header "Pods-SwiftIssues-umbrella.h"
 
   export *

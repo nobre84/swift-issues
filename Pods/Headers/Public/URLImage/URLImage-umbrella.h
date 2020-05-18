@@ -1,1 +1,0 @@
-../../../Target Support Files/URLImage/URLImage-umbrella.h

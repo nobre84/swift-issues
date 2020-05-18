@@ -1,6 +1,6 @@
 platform :ios, '13.0'
 # Issue with free dev account
-#use_frameworks!
+use_frameworks!
 
 target 'SwiftIssues' do
   pod 'Moya'

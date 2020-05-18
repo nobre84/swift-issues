@@ -14,8 +14,54 @@ import Nimble
 class IssueListRowViewModelSpec: QuickSpec {
 
     override func spec() {
+        
         describe("row view model") {
             
+            var viewModel: IssueListRowViewModel!
+            
+            beforeEach {
+                viewModel = IssueListRowViewModel(issue: .dummyOpen)
+            }
+            
+            afterEach {
+                Locale.resetLocale()
+            }
+            
+            it("has a title") {
+                expect(viewModel.title) == Issue.dummyOpen.title
+            }
+            
+            it("has an icon") {
+                expect(viewModel.icon) == "issue_open"
+            }
+            
+            it("sets the correct tint color") {
+                expect(viewModel.iconColor) == .green
+            }
+            
+            context("when localized in english") {
+            
+                beforeEach {
+                    Locale.forceLocale(identifier: "en_US")
+                }
+                
+                it("has a localized subtitle") {
+                    expect(viewModel.subtitle) == "#1234 opened 1 hour ago by John Doe"
+                }
+                
+            }
+            
+            context("when localized in portuguese") {
+            
+                beforeEach {
+                    Locale.forceLocale(identifier: "pt_BR")
+                }
+                
+                it("has a localized subtitle") {
+                    Locale.forceLocale(identifier: "pt_BR")
+                    expect(viewModel.subtitle) == "#1234 aberta há 1 hora por John Doe"
+                }
+            }
         }
     }
     

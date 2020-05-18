@@ -19,12 +19,12 @@ class IssueListRowViewModel: ObservableObject, Identifiable {
         return issue.title
     }
     
-    var icon: Image {
+    var icon: String {
         switch issue.state {
         case .closed:
-            return Image("issue_closed")
+            return "issue_closed"
         case .open:
-            return Image("issue_open")
+            return "issue_open"
         }
     }
     
