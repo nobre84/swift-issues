@@ -8,4 +8,5 @@ This is a sample app consuming the github issues API, with the objetive of explo
     * Nimble for meaningful assertions
     * OHHTTPStubs for stubbing network requests
     * Cuckoo to generate Mocks
+    * ViewInspector to test the view hierarchy
 * Network layer modeled with Moya
