@@ -44,6 +44,7 @@ class IssueListRowViewModelSpec: QuickSpec {
             
                 beforeEach {
                     Locale.forceLocale(identifier: "en_US")
+                    Bundle.forceLanguage("en")
                 }
                 
                 it("has english subtitle") {
